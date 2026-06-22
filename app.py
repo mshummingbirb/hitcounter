@@ -21,7 +21,7 @@ def index():
     try:
         # Increment the hit counter in Redis
         hits = redis_client.incr("hits")
-        message = f"Hello World! This page has been BOOPED {hits} times. ¯\_(ツ)_/¯ "
+        message = f"Hello World! This page has been BOOPED {hits} times. ¯\\_(ツ)_/¯ "
     except ConnectionError:
         message = "Hello World! (Could not connect to Redis database)"
 
@@ -35,6 +35,10 @@ def index():
         </body>
     </html>
     """
+
+@app.route("/healthz")
+def healthz():
+    return "ok", 200
 
 if __name__ == "__main__":
     # Run on port 5000 and allow external connections
