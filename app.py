@@ -21,7 +21,7 @@ def index():
     try:
         # Increment the hit counter in Redis
         hits = redis_client.incr("hits")
-        message = f"Hello World! This page has been BOOPED {hits} times."
+        message = f"Hello World! This page has been BOOPED {hits} times. ¯\_(ツ)_/¯ "
     except ConnectionError:
         message = "Hello World! (Could not connect to Redis database)"
 
