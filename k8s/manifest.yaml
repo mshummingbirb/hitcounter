@@ -61,8 +61,8 @@ spec:
     spec:
       containers:
         - name: hitcounter
-          image: my-hit-counter:v1
-          imagePullPolicy: IfNotPresent
+          image: mshummingbirb/my-hit-counter:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           env:
@@ -90,4 +90,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 5000
-  type: ClusterIP
+  type: LoadBalancer
